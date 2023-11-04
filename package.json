@@ -1,6 +1,6 @@
 {
   "name": "naive-compute",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "To fix the error of the operator not preserving decimal places 修正运算符小数位的错误",
   "main": "./dist/index.js",
   "typings": "types/index.d.ts",

@@ -5,7 +5,7 @@ const getDecimalLength = (n) => {
 	return decimal ? decimal.length : 0
 }
 const toPrecision = (n) => parseFloat(Number(n).toPrecision(DEFALT_PRECISION))
-export default function (a, type, b) {
+const compute = function (a, type, b) {
 	const power = Math.pow(10, Math.max(getDecimalLength(a), getDecimalLength(b)))
 	let result = 0
 
@@ -13,20 +13,20 @@ export default function (a, type, b) {
 	b = toPrecision(b * power)
 
 	switch (type) {
-		case '+':
-			result = (a + b) / power
-			break
-		case '-':
-			result = (a - b) / power
-			break
-		case '*':
-			result = (a * b) / (power * power)
-			break
-		case '/':
-			result = a / b
-			break
-		default:
-			console.warn('Invalid operator')
+	case '+':
+		result = (a + b) / power
+		break
+	case '-':
+		result = (a - b) / power
+		break
+	case '*':
+		result = (a * b) / (power * power)
+		break
+	case '/':
+		result = a / b
+		break
+	default:
+		console.warn('Invalid operator')
 	}
 	result = toPrecision(result)
 
@@ -37,3 +37,5 @@ export default function (a, type, b) {
 		}
 	}
 }
+
+export default compute
