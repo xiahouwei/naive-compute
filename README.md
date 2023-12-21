@@ -1,4 +1,4 @@
-# naive-tofixed
+# naive-compute
 
 To fix the error of the operator not preserving decimal places
 
